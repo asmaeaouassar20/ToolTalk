@@ -17,8 +17,8 @@
                         <p class="text-gray-900">No posts found</p>
                     </div>
                     @endforelse
-                </div>
-                {{ $posts->links() }}
+                      {{ $posts->links() }}
+                </div>              
             </div>
         </div>
 
