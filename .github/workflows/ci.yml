@@ -1,0 +1,57 @@
+name: CI Laravel
+
+# Quand déclencher ce workflow
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest  # la machine virtuelle fournie par GitHub
+
+    steps:
+      # 1. Récupère le code de ton dépôt
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      # 2. Installe PHP avec les extensions nécessaires à Laravel
+      - name: Installer PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, dom, fileinfo, mysql, sqlite3
+          coverage: none
+
+      # 3. Copie le fichier .env pour l'environnement de test
+      - name: Préparer le fichier .env
+        run: cp .env.example .env
+
+      # 4. Installe les dépendances PHP via Composer
+      - name: Installer les dépendances
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      # 5. Génère la clé d'application Laravel
+      - name: Générer la clé Laravel
+        run: php artisan key:generate
+
+      # 6. Crée une base SQLite légère pour les tests (rapide, pas de config serveur)
+      - name: Créer la base SQLite de test
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+
+      # 7. Lance les migrations sur cette base de test
+      - name: Lancer les migrations
+        run: php artisan migrate --force
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+
+      # 8. Lance les tests
+      - name: Exécuter les tests
+        run: php artisan test
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
