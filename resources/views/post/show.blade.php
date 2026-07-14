@@ -29,7 +29,7 @@
                     </div>
 
                     <!-- Clap section -->
-                        <x-like-button />
+                        <x-like-button :post="$post" />
                     
 
                     <!-- post content -->
@@ -43,7 +43,7 @@
                         <span class="px-4 py-2 bg-gray-200 rounded-2xl">{{ $post->category->name }}</span>
                     </div>
                 </div>
-                <x-like-button />
+                <x-like-button :post="$post" />
 
             </div>
 

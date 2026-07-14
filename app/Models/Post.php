@@ -28,6 +28,10 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
+
 
     // le temps nécessaire pour lire le post
     public function readTime(){
