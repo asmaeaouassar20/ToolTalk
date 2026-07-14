@@ -5,3 +5,6 @@ Disponible sur <a href="https://flowbite.com/docs/getting-started/introduction/"
 ### Heroicons
 Heroicons est une bibliothèque gratuite d'icônes SVG, créée par les auteurs de Tailwind CSS. Elle est très utilisée pour les interfaces web et les applications. 
 Disponible sur <a href="https://heroicons.com/" >Heroicons</a>
+
+### Alpine.js
+Alpine.js est une petite bibliothèque JavaScript qui permet d'ajouter de l'interactivité à une page HTML sans utiliser un framework lourd comme React ou Vue.
