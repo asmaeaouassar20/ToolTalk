@@ -37,6 +37,16 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Post::class);
     }
 
+    // many to many relation : 
+   public function following(){
+    return $this->belongsToMany(User::class ,'followers' ,'follower_id' , 'user_id');
+   }
+
+
+   public function followers(){
+    return $this->belongsToMany(User::class , 'followers' , 'user_id', 'follower_id' );
+   }
+
     public function imageUrl(){
         if($this->image){
             return Storage::url($this->image);
