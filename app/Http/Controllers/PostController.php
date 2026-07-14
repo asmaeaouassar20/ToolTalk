@@ -16,7 +16,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->simplePaginate(2);
+        $user = auth()->user();
+        $query = Post::latest();
+        if($user){
+            $ids = $user->following()->pluck('users.id');
+            $query->whereIn('user_id' , $ids);
+        }
+
+        $posts = $query->simplePaginate(2);
         return view('post.index' , compact('posts'));
     }
 

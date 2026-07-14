@@ -13,12 +13,16 @@
                 <div>
                     <x-follow-button-alpine :user="$post->user" class="flex gap-2">                                        
                         <a class="hover:underline" href="{{ route('profile.show' , $post->user) }}">{{ $post->user->name }}</a>
-                        &middot;
+                        @auth
+                        &middot;                        
                         <button 
-                        :class="following ? 'text-red-500':'text-emerald-500' " 
-                        x-text="following ? 'Unfollow' : 'Follow' "
-                        @click="follow()"
-                        >Follow</button>
+                            :class="following ? 'text-red-500':'text-emerald-500' " 
+                            x-text="following ? 'Unfollow' : 'Follow' "
+                            @click="follow()"
+                            >
+                        Follow
+                        </button>
+                        @endauth
                     </x-follow-button-alpine>
 
 
