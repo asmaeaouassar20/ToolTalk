@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PublicProfileController;
 use Illuminate\Support\Facades\Route;
  
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/@{user:username}' , [PublicProfileController::class , 'show'])->name('profile.name');
 
 
 Route::middleware(['auth' , 'verified'])->group(function(){
