@@ -7,15 +7,19 @@
 
                 <!-- User Avatar -->
                 <div class="flex gap-4">
-                   <x-user-avatar :user="$post->user" />
+                   <x-user-avatar :user="$post->user" size="w-12 h-12" />
                 </div>
 
                 <div>
-                    <div class="flex gap-2">
+                    <x-follow-button-alpine :user="$post->user" class="flex gap-2">                                        
                         <a class="hover:underline" href="{{ route('profile.show' , $post->user) }}">{{ $post->user->name }}</a>
                         &middot;
-                        <a href="#" class="text-emerald-500">Follow</a>
-                    </div>
+                        <button 
+                        :class="following ? 'text-red-500':'text-emerald-500' " 
+                        x-text="following ? 'Unfollow' : 'Follow' "
+                        @click="follow()"
+                        >Follow</button>
+                    </x-follow-button-alpine>
 
 
                     <div class="flex gap-2 text-gray-500 text-sm">

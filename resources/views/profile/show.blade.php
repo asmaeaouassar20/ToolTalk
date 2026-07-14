@@ -1,3 +1,5 @@
+@props(['user'])
+
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
@@ -20,17 +22,26 @@
                     </div>
 
                     <!-- Sidebar -->
-                    <div class="w-[320px] border-l px-8">
+                    <!-- alpine component  -->
+                    <x-follow-button-alpine :user="$user" >
                         <x-user-avatar :user="$user" size="w-20 h-20" />
                         <h3>{{ $user->name }}</h3>
-                        <p class="text-gray-500">{{ $user->followers()->count() }} followers</p>
+                        <p class="text-gray-500" > <span x-text="followersCount"></span> followers</p>
                         <p>
                             {{ $user->bio }}
                         </p>
-                        <div class="mt-4">
-                            <button class="bg-emerald-600 rounded-xl px-4 py-2 text-white mt-4">Follow</button>
-                        </div>
-                    </div>
+                        @if(auth()->user() && auth()->user()->id !== $user->id)
+                            <div class="mt-4">
+                                <button 
+                                   @click = "follow()"
+                                    class=" rounded-xl px-4 py-2 text-white mt-4"
+                                    x-text="following ? 'Unfollow' : 'Follow' "
+                                    :class="following ? 'bg-red-600' : 'bg-emerald-600' "
+                                >                                    
+                                </button>
+                            </div>
+                        @endif
+                   </x-follow-button-alpine>
 
                 </div>
             </div>
