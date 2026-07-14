@@ -8,3 +8,7 @@ Disponible sur <a href="https://heroicons.com/" >Heroicons</a>
 
 ### Alpine.js
 Alpine.js est une petite bibliothèque JavaScript qui permet d'ajouter de l'interactivité à une page HTML sans utiliser un framework lourd comme React ou Vue.
+
+### Axios
+* Axios est une bibliothèque JavaScript qui permet d'envoyer des requêtes HTTP vers le serveur.
+* Axios permet au navigateur de communiquer avec ton application Laravel sans recharger la page.
