@@ -21,6 +21,8 @@ RUN npm ci
 # Copier tout le reste du projet SEULEMENT MAINTENANT
 COPY . .
 
+Run composer dump-autoload
+
 # builder 
 RUN npm run build
 
