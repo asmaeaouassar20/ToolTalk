@@ -14,6 +14,7 @@ test('new users can register', function () {
         'password_confirmation' => 'password',
     ]);
 
-    $this->assertAuthenticated();
+    // $this->assertAuthenticated();
+    $this->assertGuest();  // l'utilisateur ne doit pas être authentifié directement, il doit vérifier son emmail d'abord
     $response->assertRedirect(route('dashboard', absolute: false));
 });
