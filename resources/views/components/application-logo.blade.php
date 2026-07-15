@@ -1,1 +1,1 @@
-<img src="logo.png" alt="logo de ToolTalk" id="logo-app" />
+<img src="{{ asset('logo.png') }}" alt="logo de ToolTalk" id="logo-app" />
