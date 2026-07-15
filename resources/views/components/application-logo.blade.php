@@ -1,1 +1,1 @@
-<img src="logo.png" alt="logo de ToolTalk" class="h-12" />
+<img src="logo.png" alt="logo de ToolTalk" id="logo-app" />

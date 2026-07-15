@@ -27,12 +27,12 @@ class DatabaseSeeder extends Seeder
        ]);
 
         $categories = [
-            'Technology',
-            'Health',
-            'Science',
-            'Sports',
-            'Politics',
-            'Entertainment'
+            'Conversational AI Assistants',
+            'Content Creation',
+            'Software Development & Coding',
+            'Data Analysis & Decision Support',
+            'Productivity & Automation',
+            'Research & Knowledge Management'
         ]; 
 
         // parcourir le tableau des catégories à insérer dans la BD

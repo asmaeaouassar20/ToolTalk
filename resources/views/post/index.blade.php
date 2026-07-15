@@ -14,7 +14,7 @@
                        <x-post-item :post="$p" />
                     @empty     
                     <div>
-                        <p class="text-gray-900">No posts found</p>
+                        <p class="text-gray-900 text-center">No posts found</p>
                     </div>
                     @endforelse
                       {{ $posts->links() }}
