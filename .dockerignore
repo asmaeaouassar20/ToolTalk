@@ -8,3 +8,6 @@
 .github
 .phpunit.result.cache
 npm-debug.log
+storage/logs/*
+storage/framework/cache/*
+storage/framework/views/*
