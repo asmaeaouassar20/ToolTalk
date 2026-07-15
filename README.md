@@ -24,3 +24,19 @@ Alpine.js est une petite bibliothèque JavaScript qui permet d'ajouter de l'inte
 ##### mailpit
 Mailpit est un outil de test d’e-mails en local.  
 Disponible à l'adresse <a href="https://mailpit.axllent.org/" >mailpit</a>
+
+
+
+
+<br/><br/><br/><br/>
+<table>
+  <tr>
+    <td>
+      <img width="212" height="212" alt="image" src="https://github.com/user-attachments/assets/4ae9c6ea-5f3d-4a02-81d4-764c4a87c168" />
+    </td>
+    <td>
+      <b>dockerfile =&gt;</b> on met les choses qui changent rarement (package.json) AVANT les choses qui changent souvent (code source). Ainsi, le téléchargement lourd des dépendances reste en cache tant que tu ne touches pas à package.json.
+    </td>
+  </tr>
+</table>
+
