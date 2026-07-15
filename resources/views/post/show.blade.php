@@ -38,7 +38,7 @@
 
                     <!-- post content -->
                     <div class="mt-8">
-                        <img src="{{ $post->imageUrl() }}" alt="post's image " class="w-full" />
+                        <img src="{{ asset($post->imageUrl()) }}" alt="post's image " class="w-full" />
                         <div class="mt-4">
                             {{ $post->content }}
                         </div>
