@@ -1,32 +1,29 @@
-# Image PHP 8.4 + Nginx sur Alpine
 FROM webdevops/php-nginx:8.4-alpine
 
-# Dossier public Laravel servi par Nginx
 ENV WEB_DOCUMENT_ROOT=/app/public
-
-# Mode production Laravel
 ENV APP_ENV=production
 
-# Dossier de travail
 WORKDIR /app
 
-# Copie du projet
-COPY . .
+# Étape 1 : Copier d'abord les fichiers de dépendances (ordre important !)
+COPY composer.json composer.lock ./
+COPY package.json package-lock.json ./
 
-# Installation des dépendances PHP
+# Étape 2 : Installer les dépendances PHP (cette couche est mise en cache tant que les .json ne changent pas)
 RUN composer install --no-interaction --optimize-autoloader --no-dev
 
-# Installation de Node.js et npm
+# Étape 3 : Installer Node.js et npm
 RUN apk add --no-cache nodejs npm
 
-# Installation et build frontend
+# Étape 4 : Installer les dépendances JS et builder (même principe de cache)
 RUN npm ci && npm run build
 
-# Ajout du script de déploiement Laravel
-COPY scripts/00-laravel-deploy.sh /opt/docker/provision/entrypoint.d/00-laravel-deploy.sh
+# Étape 5 : Copier tout le reste du projet SEULEMENT MAINTENANT
+COPY . .
 
-# Rendre le script exécutable
+# Ajout du script de déploiement
+COPY scripts/00-laravel-deploy.sh /opt/docker/provision/entrypoint.d/
 RUN chmod +x /opt/docker/provision/entrypoint.d/00-laravel-deploy.sh
 
-# Donner les droits à l'utilisateur de l'application
+# Droits
 RUN chown -R application:application /app
