@@ -37,13 +37,13 @@
                     
 
                     <!-- post content -->
-                    <div class="mt-8">
-                        <img src="{{ asset($post->imageUrl()) }}" alt="post's image " class="w-full" />
-                        <div class="mt-4">
+                    <div class="mt-8 flex">
+                        <img src="{{ $post->imageUrl() }}" alt="post's image " class="w-full w-1/2 h-96" />
+                        <div class="mt-4 mx-16 text-justify">
                             {{ $post->content }}
                         </div>
                     </div>
-                    <div class="mt-5">
+                    <div class="mt-8">
                         <span class="px-4 py-2 bg-gray-200 rounded-2xl">{{ $post->category->name }}</span>
                     </div>
                 </div>
