@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="py-3 bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -14,12 +14,11 @@
 
             </div>
 
-            <div class="flex">
-                <a href="{{ route('post.create') }}" class="flex items-center">
-                    <x-primary-button>Create post</x-primary-button>
-                </a>
-
+            <div class="flex ">
                 @auth
+                    <a href="{{ route('post.create') }}" class="flex items-center">
+                        <x-primary-button type="create-post">Create post</x-primary-button>
+                    </a>
                     <!-- Settings Dropdown -->
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
                         <x-dropdown align="right" width="48">
@@ -49,7 +48,7 @@
                                     @csrf
 
                                     <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
+                                                                this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-dropdown-link>
                                 </form>
@@ -59,8 +58,12 @@
                 @endauth
 
                 @guest
-                   <a href="{{ route('register') }}">Create an Account</a>
-                   <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('register') }}">                        
+                        <x-custom-button type="register">Create an Account</x-custom-button>
+                    </a>
+                    <a href="{{ route('login') }}">                        
+                        <x-custom-button type="login">Login</x-custom-button>
+                    </a>
                 @endguest
 
                 <!-- Hamburger -->
@@ -101,7 +104,7 @@
                         @csrf
 
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                                                    this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-responsive-nav-link>
                     </form>
