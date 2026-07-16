@@ -1,7 +1,19 @@
+# About
+ToolTalk permet aux utilisateurs de partager et découvrir des outils d'intelligence artificielle, classés par catégories. Chaque membre peut créer un post avec photo, lien, description et catégorie.
+
+## Fonctionnalités
+- Inscription et authentification des utilisateurs
+- Création de posts avec upload d'image,
+- Catégorisation des outils IA,
+- Lien direct vers l'outil partagé,
+- Description détaillée et retour d'expérience,
+- Découverte par catégorie.
+
 ## Prérequis
 - PHP 8.3 ou supérieur
 - Composer
 - Node.js && npm
+- TailwindCSS
 
 <hr />
 <br/><br/><br/><br/>
