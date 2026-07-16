@@ -38,7 +38,7 @@ Mailpit est un outil de test d’e-mails en local.
 Disponible à l'adresse <a href="https://mailpit.axllent.org/" >mailpit</a>
 
 
-
+<hr />
 
 <br/><br/><br/><br/>
 <table>
@@ -54,7 +54,7 @@ Disponible à l'adresse <a href="https://mailpit.axllent.org/" >mailpit</a>
 
 
 
-
+<hr />
 
 <br/><br/><br/>
 
