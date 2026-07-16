@@ -19,7 +19,7 @@ return [
     'quit' => 'Log Out',
 
     'profile' => 'Profile',
-
+ 
     'createPost' => 'Create Post',
     'title' => 'Title',
     'image' => 'Image',
@@ -38,7 +38,17 @@ return [
     'currentPswrd' => 'Current Password',
     'newPswrd' => 'New Password',
     'deleteAccount' => 'Delete Account',
-    'infoDeleteAccount' => 'Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.'
+    'infoDeleteAccount' => 'Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.',
+
+
+    'category1' => 'Conversational AI Assistants',
+    'category2' => 'Content Creation',
+    'category3' => 'Software Development & Coding',
+    'category4' => 'Data Analysis & Decision Support',
+    'category5' => 'Productivity & Automation',
+    'category6' => 'Research & Knowledge Management',
+
+    'all' => 'All'
 
 
 ]; 

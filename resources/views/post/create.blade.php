@@ -30,7 +30,7 @@
 
                      <!-- Content -->
                     <div class="mt-4">
-                        <x-input-label for="content" :value="__('messages.selectCateg')" />
+                        <x-input-label for="content" :value="__('messages.content')" />
                         <x-input-textarea id="content" class="block mt-1 w-full"  name="content">
                             {{ old('content') }}
                         </x-input-textarea>

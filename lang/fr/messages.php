@@ -14,7 +14,7 @@ return [
 
     'memo' => 'Se souvenir de moi',
     'setpsw' => 'Mot de passe oublié',
-
+ 
     'quit' => 'Déconnexion',
 
     'profile' => 'Profil',
@@ -39,6 +39,16 @@ return [
     'deleteAccount' => 'Suuprimer le compte',
     'infoDeleteAccount' => 'Une fois votre compte supprimé, toutes ses ressources et données seront définitivement effacées. Avant de supprimer votre compte, veuillez télécharger toutes les données ou informations que vous souhaitez conserver.',
     
+    'category1' => 'Assistants IA conversationnels',
+    'category2' => 'Création de contenu',
+    'category3' => 'Développement logiciel et programmation',
+    'category4' => 'Analyse de données et aide à la décision',
+    'category5' => 'Productivité et automatisation',
+    'category6' => 'Recherche et gestion des connaissances',
+
+    'all' => 'Tout'
+
+
 ];
   
 

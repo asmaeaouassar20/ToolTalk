@@ -25,14 +25,14 @@ class DatabaseSeeder extends Seeder
             'username' => 'testuser' ,
             'email' => 'test@gmail.com',                        
        ]);
-
+ 
         $categories = [
-            'Conversational AI Assistants',
-            'Content Creation',
-            'Software Development & Coding',
-            'Data Analysis & Decision Support',
-            'Productivity & Automation',
-            'Research & Knowledge Management'
+            'category1',
+            'category2',
+            'category3',
+            'category4',
+            'category5',
+            'category6'
         ]; 
 
         // parcourir le tableau des catégories à insérer dans la BD
