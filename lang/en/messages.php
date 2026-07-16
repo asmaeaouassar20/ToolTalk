@@ -48,7 +48,10 @@ return [
     'category5' => 'Productivity & Automation',
     'category6' => 'Research & Knowledge Management',
 
-    'all' => 'All'
+    'all' => 'All',
+
+    'nocateg' => 'No catrgories found',
+    'noposts' => 'No posts found'
 
 
 ]; 

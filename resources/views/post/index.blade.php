@@ -4,7 +4,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-               <x-category-tabs> No catrgories</x-category-tabs>
+               <x-category-tabs> {{ __('messages.nocateg') }}</x-category-tabs>
             </div>
         </div>
 
@@ -15,7 +15,7 @@
                        <x-post-item :post="$p" />
                     @empty     
                     <div>
-                        <p class="text-gray-900 text-center">No posts found</p>
+                        <p class="text-gray-900 text-center">{{ __('messages.noposts') }}</p>
                     </div>
                     @endforelse
                       {{ $posts->links() }}

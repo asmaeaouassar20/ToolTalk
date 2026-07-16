@@ -48,39 +48,65 @@
                                     @csrf
 
                                     <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                                this.closest('form').submit();">
+                                                                    this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-dropdown-link>
                                 </form>
                             </x-slot>
                         </x-dropdown>
                     </div>
-                     <!-- Hamburger -->
-                <div class="-me-2 flex items-center sm:hidden">
-                    <button @click="open = ! open"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                            <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+                    <!-- Hamburger -->
+                    <div class="-me-2 flex items-center sm:hidden">
+                        <button @click="open = ! open"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                                <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
                 @endauth
 
                 @guest
-                    <a href="{{ route('register') }}">                        
+                    <a href="{{ route('register') }}">
                         <x-custom-button type="register">{{ __('messages.register') }}</x-custom-button>
                     </a>
-                    <a href="{{ route('login') }}">                        
+                    <a href="{{ route('login') }}">
                         <x-custom-button type="login">{{ __('messages.login') }}</x-custom-button>
                     </a>
                 @endguest
+                <script>
+                    function choisirLangue(langue) {
+                        const baseUrl = "{{ Storage::url('lang/') }}";
+                        document.getElementById('locale-main').src=baseUrl+langue+'.jpg';
+                        document.getElementById('options-local-lang').style.visibility='hidden';
+                        const a = document.createElement('a');
+                        if(langue=='en'){
+                            a.href="{{ route('lang.switch' , 'en') }}";
+                        }
+                        if(langue=='fr'){
+                            a.href="{{ route('lang.switch' , 'fr') }}";
+                        }
+                        a.click();
+                    }
 
-               
+                </script>
+                <div class="app-lang">
+                    <div id="logo-langue-app" class="h-full">                        
+                        <img id="locale-main" src="{{ Storage::url('lang/'.session()->get('locale').'.jpg') }}" alt="logo locale lang" class="mt-2" />
+                    </div>
+                    <div id="options-local-lang">
+                        <span onclick="choisirLangue('en')"><img src="{{ Storage::url('lang/en.jpg') }}"
+                                alt="logo locale lang" class="mt-2" /></span>
+                        <span onclick="choisirLangue('fr')"><img src="{{ Storage::url('lang/fr.jpg') }}"
+                                alt="logo locale lang" class="mt-2" /></span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -105,7 +131,7 @@
                         @csrf
 
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
+                                                        this.closest('form').submit();">
                             {{ __('messages.quit') }}
                         </x-responsive-nav-link>
                     </form>

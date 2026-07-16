@@ -46,7 +46,10 @@ return [
     'category5' => 'Productivité et automatisation',
     'category6' => 'Recherche et gestion des connaissances',
 
-    'all' => 'Tout'
+    'all' => 'Tout',
+
+    'nocateg' => 'Aucune Catégorie Trouvée',
+    'noposts' => 'Aucune Publication Trouvée'
 
 
 ];
