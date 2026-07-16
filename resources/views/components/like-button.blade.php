@@ -12,7 +12,7 @@
         })
         .catch( error => console.error(error) )
        }
-    }" class="mt-8 border-t border-b p-4">
+    }" >
     <button class="flex gap-2 text-gray-500 hover:text-gray-900" @click="likePost()">
         <template x-if="hasLike">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">

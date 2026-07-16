@@ -7,21 +7,19 @@
 
                 <!-- User Avatar -->
                 <div class="flex gap-4">
-                   <x-user-avatar :user="$post->user" size="w-12 h-12" />
+                    <x-user-avatar :user="$post->user" size="w-12 h-12" />
                 </div>
 
                 <div>
-                    <x-follow-button-alpine :user="$post->user" class="flex gap-2">                                        
-                        <a class="hover:underline" href="{{ route('profile.show' , $post->user) }}">{{ $post->user->name }}</a>
+                    <x-follow-button-alpine :user="$post->user" class="flex gap-2">
+                        <a class="hover:underline"
+                            href="{{ route('profile.show', $post->user) }}">{{ $post->user->name }}</a>
                         @auth
-                        &middot;                        
-                        <button 
-                            :class="following ? 'text-red-500':'text-emerald-500' " 
-                            x-text="following ? 'Unfollow' : 'Follow' "
-                            @click="follow()"
-                            >
-                        Follow
-                        </button>
+                            &middot;
+                            <button :class="following ? 'text-red-500':'text-emerald-500' "
+                                x-text="following ? 'Unfollow' : 'Follow' " @click="follow()">
+                                Follow
+                            </button>
                         @endauth
                     </x-follow-button-alpine>
 
@@ -32,9 +30,12 @@
                         {{ $post->created_at->format('M d, Y') }}
                     </div>
 
-                    <!-- Clap section -->
+                    <!-- Reaction section -->
+                    <div class="flex gap-12 mt-8 border-t border-b p-4">
                         <x-like-button :post="$post" />
-                    
+                        <x-comment-button />
+                    </div>
+
 
                     <!-- post content -->
                     <div class="mt-8 flex">
@@ -47,7 +48,12 @@
                         <span class="px-4 py-2 bg-gray-200 rounded-2xl">{{ $post->category->name }}</span>
                     </div>
                 </div>
-                <x-like-button :post="$post" />
+                
+                 <!-- Reaction section -->
+                    <div class="flex gap-12 mt-8 border-t border-b p-4">
+                        <x-like-button :post="$post" />
+                        <x-comment-button />
+                    </div>
 
             </div>
 
