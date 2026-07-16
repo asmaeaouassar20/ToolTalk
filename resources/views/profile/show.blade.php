@@ -40,7 +40,8 @@
                                     :class="following ? 'bg-red-600' : 'bg-emerald-600' "
                                 >                                    
                                 </button>
-                            </div>
+                   <p class="text-xs w-1/3 mt-3 text-red-400" x-text="verified ? '' : 'You should verifie your email. Check your inbox'" >                                
+                   </p>
                         @endif
                    </x-follow-button-alpine>
                    </div>
