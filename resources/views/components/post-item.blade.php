@@ -14,7 +14,7 @@
         </a>
         <div>
             <x-primary-button class="mb-4">
-                <a href="{{ route('post.show' , ['username' => $post->user->username , 'post' => $post->slug ] ) }}">Read more</a>
+                <a href="{{ route('post.show' , ['username' => $post->user->username , 'post' => $post->slug ] ) }}">{{ __('messages.rm') }}</a>
                 <svg class="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

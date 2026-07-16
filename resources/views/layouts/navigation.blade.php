@@ -17,7 +17,7 @@
             <div class="flex ">
                 @auth
                     <a href="{{ route('post.create') }}" class="flex items-center">
-                        <x-primary-button type="create-post">Create post</x-primary-button>
+                        <x-primary-button type="create-post">{{ __('messages.createPost')  }}</x-primary-button>
                     </a>
                     <!-- Settings Dropdown -->
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -55,18 +55,7 @@
                             </x-slot>
                         </x-dropdown>
                     </div>
-                @endauth
-
-                @guest
-                    <a href="{{ route('register') }}">                        
-                        <x-custom-button type="register">Create an Account</x-custom-button>
-                    </a>
-                    <a href="{{ route('login') }}">                        
-                        <x-custom-button type="login">Login</x-custom-button>
-                    </a>
-                @endguest
-
-                <!-- Hamburger -->
+                     <!-- Hamburger -->
                 <div class="-me-2 flex items-center sm:hidden">
                     <button @click="open = ! open"
                         class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -80,6 +69,18 @@
                         </svg>
                     </button>
                 </div>
+                @endauth
+
+                @guest
+                    <a href="{{ route('register') }}">                        
+                        <x-custom-button type="register">{{ __('messages.register') }}</x-custom-button>
+                    </a>
+                    <a href="{{ route('login') }}">                        
+                        <x-custom-button type="login">{{ __('messages.login') }}</x-custom-button>
+                    </a>
+                @endguest
+
+               
             </div>
         </div>
     </div>
@@ -96,7 +97,7 @@
 
                 <div class="mt-3 space-y-1">
                     <x-responsive-nav-link :href="route('profile.edit')">
-                        {{ __('Profile') }}
+                        {{ __('messages.profile') }}
                     </x-responsive-nav-link>
 
                     <!-- Authentication -->
@@ -105,7 +106,7 @@
 
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('messages.quit') }}
                         </x-responsive-nav-link>
                     </form>
                 </div>

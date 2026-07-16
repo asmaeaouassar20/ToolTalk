@@ -5,6 +5,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PublicProfileController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
  
 // Route::get('/', function () {
@@ -45,6 +46,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+// pour le choix de la langue
+Route::get('/lang/{locale}' , function($locale){
+    App::setLocale($locale);
+    session()->put('locale',$locale);
+    return back();
+})->name('lang.switch');
 
 require __DIR__.'/auth.php';
  

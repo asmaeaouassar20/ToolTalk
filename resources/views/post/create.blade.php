@@ -7,7 +7,7 @@
 
                     <!-- Title -->
                     <div>
-                        <x-input-label for="title" :value="__('Title')" />
+                        <x-input-label for="title" :value="__('messages.title')" />
                         <x-text-input id="title" class="block mt-1 w-full" type="text" name="title"
                             :value="old('title')"   />
                         <x-input-error :messages="$errors->get('title')" class="mt-2" />
@@ -15,7 +15,7 @@
 
                      <!-- image -->
                     <div class="mt-4">
-                        <x-input-label for="image" :value="__('Image')" />
+                        <x-input-label for="image" :value="__('messages.image')" />
                         <x-text-input id="image" class="block mt-1 w-full" type="file" name="image"
                             :value="old('image')"   />
                         <x-input-error :messages="$errors->get('image')" class="mt-2" />
@@ -23,21 +23,21 @@
 
                     <!-- Category -->
                     <div class="mt-4">
-                        <x-input-label for="category" :value="__('Category')" />
+                        <x-input-label for="category" :value="__('messages.selectCateg')" />
                         <x-select-category />
                         <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
                     </div>
 
                      <!-- Content -->
                     <div class="mt-4">
-                        <x-input-label for="content" :value="__('Content')" />
+                        <x-input-label for="content" :value="__('messages.selectCateg')" />
                         <x-input-textarea id="content" class="block mt-1 w-full"  name="content">
                             {{ old('content') }}
                         </x-input-textarea>
                         <x-input-error :messages="$errors->get('content')" class="mt-2" />
                     </div>
 
-                    <x-primary-button class="mt-4">Submit</x-primary-button>
+                    <x-primary-button class="mt-4">{{ __('messages.submit') }}</x-primary-button>
                 </form>
             </div>
         </div>
