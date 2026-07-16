@@ -97,7 +97,11 @@
                 </script>
                 <div class="app-lang">
                     <div id="logo-langue-app" class="h-full">                        
-                        <img id="locale-main" src="{{ Storage::url('lang/'.session()->get('locale').'.jpg') }}" alt="logo locale lang" class="mt-2" />
+                        @if (session()->has('locale'))
+                            <img id="locale-main" src="{{ Storage::url('lang/'.session()->get('locale').'.jpg') }}" alt="logo locale lang" class="mt-2" />                            
+                        @else
+                            <img id="locale-main" src="{{ Storage::url('lang/en.jpg') }}" alt="logo locale lang" class="mt-2" />                            
+                        @endif
                     </div>
                     <div id="options-local-lang">
                         <span onclick="choisirLangue('en')"><img src="{{ Storage::url('lang/en.jpg') }}"
