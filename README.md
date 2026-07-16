@@ -59,5 +59,4 @@ Disponible à l'adresse <a href="https://mailpit.axllent.org/" >mailpit</a>
 <br/><br/><br/>
 
 ### Diagramme de classes
-
-test
+<img width="738" height="647" alt="image" src="https://github.com/user-attachments/assets/754ba5e5-13ed-40ba-bc61-1ec9b19b0e92" />
