@@ -38,9 +38,9 @@
 
 
                     <!-- post content -->
-                    <div class="mt-8 flex">
+                    <div class="mt-8 flex flex-col md:flex-row">
                         <img src="{{ $post->imageUrl() }}" alt="post's image " class="w-full w-1/2 h-96" />
-                        <div class="mt-4 mx-16 text-justify">
+                        <div class="mt-4 mx-8 text-justify">
                             {{ $post->content }}
                         </div>
                     </div>

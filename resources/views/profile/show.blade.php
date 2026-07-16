@@ -22,6 +22,7 @@
                     </div>
 
                     <!-- Sidebar -->
+                    <div class="w-1/3 mt-16">
                     <!-- alpine component  -->
                     <x-follow-button-alpine :user="$user" >
                         <x-user-avatar :user="$user" size="w-20 h-20" />
@@ -42,6 +43,7 @@
                             </div>
                         @endif
                    </x-follow-button-alpine>
+                   </div>
 
                 </div>
             </div>
