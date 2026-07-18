@@ -51,7 +51,9 @@ return [
     'all' => 'All',
 
     'nocateg' => 'No catrgories found',
-    'noposts' => 'No posts found'
+    'noposts' => 'No posts found',
+
+    'myposts' => 'My Posts'
 
 
 ]; 

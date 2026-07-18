@@ -94,4 +94,14 @@ class PostController extends Controller
         $posts = $category->posts()->latest()->simplePaginate(2);
         return view('post.index' , compact('posts'));;
     }
+
+
+    public function showMyPosts(){
+        $user = auth()->user();
+        if($user){
+            $myposts = $user->posts()->latest()->simplePaginate(2);
+            return view('profile.myposts', ['posts' => $myposts]);
+        }
+        return redirect()->route('login');
+    }
 }

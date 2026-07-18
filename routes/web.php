@@ -39,6 +39,8 @@ Route::middleware(['auth' , 'verified'])->group(function(){
     Route::post('/like/{post}' , [LikeController::class , 'likePost'])
     ->name('like');
 
+    Route::get('/myposts' , [PostController::class ,'showMyPosts'])->name('profile.myposts');
+
 });
 
 Route::middleware('auth')->group(function () {

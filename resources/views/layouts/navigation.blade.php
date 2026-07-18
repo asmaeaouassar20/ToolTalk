@@ -16,6 +16,9 @@
 
             <div class="flex ">
                 @auth
+                <a href="{{ route('profile.myposts') }}" class="flex items-center mr-5">
+                        <x-primary-button type="create-post">{{ __('messages.myposts')  }}</x-primary-button>
+                    </a>
                     <a href="{{ route('post.create') }}" class="flex items-center">
                         <x-primary-button type="create-post">{{ __('messages.createPost')  }}</x-primary-button>
                     </a>

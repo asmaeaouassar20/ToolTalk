@@ -1,0 +1,24 @@
+
+<x-app-layout>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    @forelse($posts as $p)
+                       <x-post-item :post="$p" />
+                    @empty     
+                    <div class="flex flex-col gap-5 justify-center items-center">
+                        <p class="text-gray-900 ">{{ __('messages.noposts') }}</p>
+                         <a href="{{ route('post.create') }}" class="flex items-center">
+                        <x-primary-button type="create-post">{{ __('messages.createPost')  }}</x-primary-button>
+                    </a>
+                    </div>
+                    @endforelse
+                      {{ $posts->links() }}
+                </div>              
+            </div>
+        </div>
+
+    </div>
+</x-app-layout>

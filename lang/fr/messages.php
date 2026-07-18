@@ -49,7 +49,9 @@ return [
     'all' => 'Tout',
 
     'nocateg' => 'Aucune Catégorie Trouvée',
-    'noposts' => 'Aucune Publication Trouvée'
+    'noposts' => 'Aucune Publication Trouvée',
+
+    'myposts' => 'Mes Publications'
 
 
 ];
