@@ -25,6 +25,7 @@ class PostFactory extends Factory
             'image' => 'image-post-example.png',
             'title' => $title,
             'slug' => Str::slug($title),
+            'link' => fake()->url(),
             'content' => fake()->paragraph(5),
             'category_id' => Category::inRandomOrder()->first()->id,
             'user_id' => 1,

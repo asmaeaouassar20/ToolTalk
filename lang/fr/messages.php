@@ -51,7 +51,9 @@ return [
     'nocateg' => 'Aucune Catégorie Trouvée',
     'noposts' => 'Aucune Publication Trouvée',
 
-    'myposts' => 'Mes Publications'
+    'myposts' => 'Mes Publications',
+
+    'link' => 'Lien (optionnel)'
 
 
 ];

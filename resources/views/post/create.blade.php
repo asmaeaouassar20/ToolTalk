@@ -28,6 +28,14 @@
                         <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
                     </div>
 
+                     <!-- Link -->
+                    <div class="mt-4">
+                        <x-input-label for="link" :value="__('messages.link')" />                        
+                        <x-text-input id="link" class="block mt-1 w-full" type="text" name="link"
+                            :value="old('link')"   />
+                        <x-input-error :messages="$errors->get('link')" class="mt-2" />
+                    </div>
+
                      <!-- Content -->
                     <div class="mt-4">
                         <x-input-label for="content" :value="__('messages.content')" />
