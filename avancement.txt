@@ -3,3 +3,5 @@
 - refaire ton projet sans suivre un tuto
 - le poste peut contenir un lien vers cet outil (c optionnel) ou bien vers un article
 - un user peut voir ses posts
+- filtrage des posts par catégorie dans : index.blade.php et dans myposts.blade.php
+- taille de l'image dans le post
