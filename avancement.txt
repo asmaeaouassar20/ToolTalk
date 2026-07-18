@@ -1,6 +1,5 @@
 - un follower peut faire un commentaire
 - un utilisateur qui n'est pas authentifié ne peut pas ajouter un commentaire
-- refaire ton projet sans suivre un tuto
-- le poste peut contenir un lien vers cet outil (c optionnel) ou bien vers un article
 - filtrage des posts par catégorie dans : index.blade.php et dans myposts.blade.php
 - un utilisateur peut supprimer son propre post
+- chaque utilisateur peut voir ses followers
