@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="py-3 bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-gray-200 shadow-xl  fixed top-0 left-0 right-0  py-3  border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -9,14 +9,11 @@
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
-
-                <!-- Navigation Links -->
-
             </div>
 
-            <div class="flex ">
+            <div class="flex">
                 @auth
-                <a href="{{ route('profile.myposts') }}" class="flex items-center mr-5">
+                    <a href="{{ route('profile.myposts') }}" class="flex items-center mr-5">
                         <x-primary-button type="create-post">{{ __('messages.myposts')  }}</x-primary-button>
                     </a>
                     <a href="{{ route('post.create') }}" class="flex items-center">
@@ -51,7 +48,7 @@
                                     @csrf
 
                                     <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                                    this.closest('form').submit();">
+                                                                        this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-dropdown-link>
                                 </form>
@@ -85,25 +82,27 @@
                 <script>
                     function choisirLangue(langue) {
                         const baseUrl = "{{ Storage::url('lang/') }}";
-                        document.getElementById('locale-main').src=baseUrl+langue+'.jpg';
-                        document.getElementById('options-local-lang').style.visibility='hidden';
+                        document.getElementById('locale-main').src = baseUrl + langue + '.jpg';
+                        document.getElementById('options-local-lang').style.visibility = 'hidden';
                         const a = document.createElement('a');
-                        if(langue=='en'){
-                            a.href="{{ route('lang.switch' , 'en') }}";
+                        if (langue == 'en') {
+                            a.href = "{{ route('lang.switch', 'en') }}";
                         }
-                        if(langue=='fr'){
-                            a.href="{{ route('lang.switch' , 'fr') }}";
+                        if (langue == 'fr') {
+                            a.href = "{{ route('lang.switch', 'fr') }}";
                         }
                         a.click();
                     }
 
                 </script>
-                <div class="app-lang">
-                    <div id="logo-langue-app" class="h-full">                        
+                <div class="app-lang ms-5 mb-2">
+                    <div id="logo-langue-app" class="h-full">
                         @if (session()->has('locale'))
-                            <img id="locale-main" src="{{ Storage::url('lang/'.session()->get('locale').'.jpg') }}" alt="logo locale lang" class="mt-2" />                            
+                            <img id="locale-main" src="{{ Storage::url('lang/' . session()->get('locale') . '.jpg') }}"
+                                alt="logo locale lang" class="mt-2" />
                         @else
-                            <img id="locale-main" src="{{ Storage::url('lang/en.jpg') }}" alt="logo locale lang" class="mt-2" />                            
+                            <img id="locale-main" src="{{ Storage::url('lang/en.jpg') }}" alt="logo locale lang"
+                                class="mt-2" />
                         @endif
                     </div>
                     <div id="options-local-lang">
@@ -138,7 +137,7 @@
                         @csrf
 
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                                                        this.closest('form').submit();">
+                                                            this.closest('form').submit();">
                             {{ __('messages.quit') }}
                         </x-responsive-nav-link>
                     </form>

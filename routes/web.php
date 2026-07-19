@@ -9,45 +9,46 @@ use App\Http\Controllers\PublicProfileController;
 use App\Models\Post;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
- 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/@{user:username}' , [PublicProfileController::class , 'show'])->name('profile.show');
+Route::get('/@{user:username}', [PublicProfileController::class, 'show'])->name('profile.show');
 
-Route::get('/', [PostController::class , 'index'])
+Route::get('/', [PostController::class, 'index'])
     ->name('dashboard');
-Route::get('/@{username}/{post:slug}' , [PostController::class , 'show'])
+Route::get('/@{username}/{post:slug}', [PostController::class, 'show'])
     ->name('post.show');
-
-
-Route::middleware(['auth' , 'verified'])->group(function(){
-
-    Route::get('/category/{category}' , [PostController::class , 'category'])
+Route::get('/category/{category}', [PostController::class, 'category'])
     ->name('post.byCategory');
 
-    Route::get('/post/create', [PostController::class , 'create'])
-    ->name('post.create');
 
-    Route::post('/post/create' , [PostController::class , 'store'])
-    ->name('post.store');
+Route::middleware(['auth', 'verified'])->group(function () {
 
-  
+    Route::get('/post/create', [PostController::class, 'create'])
+        ->name('post.create');
 
-    Route::post('/follow/{user}' , [FollowerController::class , 'followToggle'])
-    ->name('follow');
+    Route::post('/post/create', [PostController::class, 'store'])
+        ->name('post.store');
 
-    Route::post('/like/{post}' , [LikeController::class , 'likePost'])
-    ->name('like');
+    Route::post('/follow/{user}', [FollowerController::class, 'followToggle'])
+        ->name('follow');
 
-    Route::get('/myposts' , [PostController::class ,'showMyPosts'])->name('profile.myposts');
+    Route::post('/like/{post}', [LikeController::class, 'likePost'])
+        ->name('like');
 
-    Route::post('/addcomment/{post}' , [CommentController::class , 'create' ])->name('create.comment');
+    Route::get('/myposts', [PostController::class, 'showMyPosts'])->name('profile.myposts');
 
-    Route::get('/showcomments/{post}' , function(Post $post){
-        return view('post.show' , ['post' => $post , 'show' => true] );
-    } )->name('show.comments');
+    Route::get('/myposts/category/{category}' , [PostController::class , 'categorymyposts'] )->name('mypost.byCategory');
+
+    Route::post('/addcomment/{post}', [CommentController::class, 'create'])->name('create.comment');
+
+    Route::get('/showcomments/{post}', function (Post $post) {
+        return view('post.show', ['post' => $post, 'show' => true]);
+    })->name('show.comments');
+
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -58,11 +59,10 @@ Route::middleware('auth')->group(function () {
 
 
 // pour le choix de la langue
-Route::get('/lang/{locale}' , function($locale){
+Route::get('/lang/{locale}', function ($locale) {
     App::setLocale($locale);
-    session()->put('locale',$locale);
+    session()->put('locale', $locale);
     return back();
 })->name('lang.switch');
 
-require __DIR__.'/auth.php';
- 
+require __DIR__ . '/auth.php';

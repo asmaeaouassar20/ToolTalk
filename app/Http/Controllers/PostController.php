@@ -49,9 +49,10 @@ class PostController extends Controller
        $imagePath = $image->store('posts' , 'public');
        $data['image'] = $imagePath;
 
+     
        Post::create($data);
 
-       return redirect()->route('dashboard');
+       return redirect()->route('profile.myposts');
     }
 
     /**
@@ -86,7 +87,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
-    }
+    } 
 
 
 
@@ -103,5 +104,10 @@ class PostController extends Controller
             return view('profile.myposts', ['posts' => $myposts]);
         }
         return redirect()->route('login');
+    }
+
+    public function categorymyposts(Category $category){
+        $myPosts = $category->posts()->where('user_id','=',auth()->user()->id)->simplePaginate();
+        return view('profile.myposts', ['posts' => $myPosts]);
     }
 }

@@ -24,6 +24,7 @@ class PostCreateRequest extends FormRequest
     {
         return [
             'image' => ['required' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'],
+            'link' => ['nullable' ,'url'],
            'title' => 'required',
            'content' => 'required' , 
            'category_id' => ['required' , 'exists:categories,id'],

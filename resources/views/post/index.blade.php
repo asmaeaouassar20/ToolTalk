@@ -4,9 +4,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-               <x-category-tabs> {{ __('messages.nocateg') }}</x-category-tabs>
+               <x-category-tabs route="post.byCategory"> {{ __('messages.nocateg') }}</x-category-tabs>
             </div>
-        </div>
+        </div> 
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
