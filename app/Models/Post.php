@@ -32,6 +32,9 @@ class Post extends Model
     public function likes(){
         return $this->hasMany(Like::class);
     }
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 
 
     // le temps nécessaire pour lire le post

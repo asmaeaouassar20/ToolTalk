@@ -8,4 +8,8 @@ class Comment extends Model
 {
     const UPDATED_AT = null;
     protected $fillable = ['comment' , 'user_id' , 'post_id'];
+
+    public function post(){
+        return $this->belongsTo(Post::class);
+    }
 }
