@@ -55,7 +55,9 @@ return [
 
     'link' => 'Lien (optionnel)',
 
-    'comment' => 'ajouter un commentaire'
+    'comment' => 'ajouter un commentaire',
+
+    'comments' => 'commentaires'
 
 
 ];

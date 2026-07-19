@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfileController;
@@ -40,6 +41,8 @@ Route::middleware(['auth' , 'verified'])->group(function(){
     ->name('like');
 
     Route::get('/myposts' , [PostController::class ,'showMyPosts'])->name('profile.myposts');
+
+    Route::post('/addcomment/{post}' , [CommentController::class , 'create' ])->name('create.comment');
 
 });
 

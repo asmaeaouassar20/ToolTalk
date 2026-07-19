@@ -4,10 +4,10 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="flex">
+                <div class="flex flex-col-reverse md:flex-row">
 
                     <!-- Post content -->
-                    <div class="flex-1 pr-8">
+                    <div class="flex-1 pr-8 mt-12">
                         <h1 class="text-5xl">{{ $user->name }}</h1>
                         <div class="mt-8">
                             @forelse($posts as $p)
