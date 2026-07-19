@@ -36,6 +36,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function posts(){
         return $this->hasMany(Post::class);
     }
+    
 
     // many to many relation : 
    public function following(){
