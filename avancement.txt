@@ -1,7 +1,5 @@
-- un follower peut faire un commentaire
-- un utilisateur qui n'est pas authentifié ne peut pas ajouter un commentaire
-- filtrage des posts par catégorie dans : index.blade.php et dans myposts.blade.php
+
 - un utilisateur peut supprimer son propre post
 - chaque utilisateur peut voir ses followers
 - changer le SGBD
-- le navbar doit rester fixe
+- ajouter les "upvote" et "downvote" pour les commentaires
