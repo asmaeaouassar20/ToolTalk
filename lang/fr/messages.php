@@ -53,7 +53,9 @@ return [
 
     'myposts' => 'Mes Publications',
 
-    'link' => 'Lien (optionnel)'
+    'link' => 'Lien (optionnel)',
+
+    'comment' => 'ajouter un commentaire'
 
 
 ];

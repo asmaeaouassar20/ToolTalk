@@ -1,5 +1,6 @@
-<div
-    class="flex flex-col md:flex-row mb-5  bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs ">
+<div class="mb-16">
+    <div
+    class="flex flex-col md:flex-row  bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs ">
     <img class="object-cover  rounded-base h-64 md:h-auto md:w-48 mb-4 md:mb-0" src="{{ Storage::url($post->image) }}"
         alt="">
 
@@ -23,4 +24,6 @@
             </x-primary-button>
         </div>
     </div>
+</div>
+<x-comment/>
 </div>

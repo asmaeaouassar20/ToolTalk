@@ -55,7 +55,9 @@ return [
 
     'myposts' => 'My Posts',
 
-    'link' => 'Link (optional)'
+    'link' => 'Link (optional)',
+
+    'comment' => 'add comment'
 
 
 ]; 
