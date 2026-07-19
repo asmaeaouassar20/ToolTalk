@@ -6,6 +6,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PublicProfileController;
+use App\Models\Post;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
  
@@ -44,6 +45,9 @@ Route::middleware(['auth' , 'verified'])->group(function(){
 
     Route::post('/addcomment/{post}' , [CommentController::class , 'create' ])->name('create.comment');
 
+    Route::get('/showcomments/{post}' , function(Post $post){
+        return view('post.show' , ['post' => $post , 'show' => true] );
+    } )->name('show.comments');
 });
 
 Route::middleware('auth')->group(function () {
