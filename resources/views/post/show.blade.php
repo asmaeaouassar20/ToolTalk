@@ -56,12 +56,12 @@
                 </div>
 
 
-                <div class="section"> 
+                <div class="mt-5"> 
                     @foreach ($post->comments as $comment )
                         <div class="mb-5 flex gap-5 bg-gray-100 p-4">
                             <div class="flex flex-col items-center justify-center">
                                 <img class="w-16 h-16 rounded-full" src={{ Storage::url($comment->user->image) }} alt="user photo" />
-                                <a>{{ $comment->user->name }}</a>
+                                <a href={{ route('profile.show' , $post->user->username) }} class="text-sm hover:underline cursor-pointer">{{ $comment->user->name }}</a>
                             </div>
                             <div>
                                 {{ $comment->comment }}
