@@ -3,3 +3,4 @@
 - chaque utilisateur peut voir ses followers
 - changer le SGBD
 - ajouter les "upvote" et "downvote" pour les commentaires
+- ajouter des screensshots à ton projet
